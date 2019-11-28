@@ -1,5 +1,5 @@
 # Open Air
-> Report on South African air quality data pulled from the [luftdaten.info](https://luftdaten.info) project's APIs.
+> Report on South African air quality open data pulled from the [luftdaten.info](https://luftdaten.info) project's API.
 
 ## Libraries
 
