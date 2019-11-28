@@ -11,20 +11,20 @@
 <body>
     <script>
         function logSensor(d) {
-            console.log(d.id)
+            console.log(`Sensor ID #${d.sensor.id}`)
 
             console.log(d.timestamp)
 
-            console.log('pin', d.sensor.pin)
+            console.log('Pin', d.sensor.pin)
 
             if (d.sensor.sensor_type.name == 'SDS011') {
                 console.log('Measures: particulate matter')
-                console.log('(', d.sensor.sensor_type.manufacturer, ')')
             } else if (d.sensor.sensor_type.name == 'DHT22') {
                 console.log('Measures: temperature / humidity')
             } else if (d.sensor.sensor_type.name == 'BME280') {
                 console.log('Measures: air pressure / temperature / humidity')
             }
+            console.log('Manufacturer:', d.sensor.sensor_type.manufacturer)
 
             for (var v of d.sensordatavalues) {
                 console.log(v.value_type, v.value)
