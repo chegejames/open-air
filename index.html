@@ -6,60 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Open Air</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        var countryCode = 'ZA';
+    </script>
 </head>
 
-<body>
-    <script>
-        function logSensor(d) {
-            console.log(`Sensor ID #${d.sensor.id}`)
+<body onload="render(countryCode)">
+    <h1>Sensors</h1>
+    <h2 id="location"></h2>
 
-            console.log(d.timestamp)
-
-            console.log('Pin', d.sensor.pin)
-
-            if (d.sensor.sensor_type.name == 'SDS011') {
-                console.log('Measures: particulate matter')
-            } else if (d.sensor.sensor_type.name == 'DHT22') {
-                console.log('Measures: temperature / humidity')
-            } else if (d.sensor.sensor_type.name == 'BME280') {
-                console.log('Measures: air pressure / temperature / humidity')
-            }
-            console.log('Manufacturer:', d.sensor.sensor_type.manufacturer)
-
-            for (var v of d.sensordatavalues) {
-                console.log(v.value_type, v.value)
-            }
-
-            console.log(d.location.country)
-            console.log('alt', d.location.altitude, 'm')
-            console.log('co-ord', d.location.latitude, ',', d.location.longitude)
-            console.log('indoor', d.location.indoor ? 'YES' : 'NO')
-
-            console.log('')
-        }
-        var url = '//data.sensor.community/airrohr/v1/filter/country=ZA';
-        fetch(url)
-            .then(resp => resp.json())
-            .then(data => {
-                for (var d of data) {
-                    logSensor(d)
-                    break
-                }
-            })
-        console.log('')
-
-        // 5 min endpoint.
-        var url = '//api.luftdaten.info/static/v2/data.json '
-        fetch(url)
-            .then(resp => resp.json())
-            .then(data => {
-                for (var d of data) {
-                    if (d.location.country == 'ZA') {
-                        logSensor(d)
-                    }
-                }
-            })
-
+    <div id="target-output">Error fetching or processing data</div>
+    <script id="sensors-table" type="text/template">
+        {{#sensors}}
+            <ul>
+                <li><strong>ID:</strong> {{ id }}</li>
+            </ul>
+        {{/sensors}}
     </script>
 </body>
 
