@@ -1,5 +1,7 @@
 # Open Air
-> Report on South African air quality open data pulled from the [luftdaten.info](https://luftdaten.info) project's API.
+> Report on South African air quality sensors using an open data project's API
+
+This project exists because I went to a workshop in South Africa where air quality sensors were put together. These sensors contribute air quality measurement data to the [luftdaten.info](https://luftdaten.info) project. This data and those of other countries is made available through their APIs.
 
 ## Libraries
 
@@ -32,10 +34,10 @@
 ## Github Pages
 
 1. Use this repo or a fork on Github Pages.
-1. Go to Settings.
-1. Go to Github Pages section.
-1. Enable website using `master` branch. The page will reload.
-1. Navigate to the section again and find the URL.
+2. Go to Settings.
+3. Go to Github Pages section.
+4. Enable website using `master` branch. The page will reload.
+5. Navigate to the section again and find the URL.
 
 ## Local development
 
