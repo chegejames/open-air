@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Open Air</title>
+</head>
+
+<body>
+    <script>
+        function logSensor(d) {
+            console.log(d.id)
+
+            console.log(d.timestamp)
+
+            console.log('pin', d.sensor.pin)
+
+            if (d.sensor.sensor_type.name == 'SDS011') {
+                console.log('Measures: particulate matter')
+                console.log('(', d.sensor.sensor_type.manufacturer, ')')
+            } else if (d.sensor.sensor_type.name == 'DHT22') {
+                console.log('Measures: temperature / humidity')
+            } else if (d.sensor.sensor_type.name == 'BME280') {
+                console.log('Measures: air pressure / temperature / humidity')
+            }
+
+            for (var v of d.sensordatavalues) {
+                console.log(v.value_type, v.value)
+            }
+
+            console.log(d.location.country)
+            console.log('alt', d.location.altitude, 'm')
+            console.log('co-ord', d.location.latitude, ',', d.location.longitude)
+            console.log('indoor', d.location.indoor ? 'YES' : 'NO')
+
+            console.log('')
+        }
+        var url = 'http://data.sensor.community/airrohr/v1/filter/country=ZA';
+        fetch(url)
+            .then(resp => resp.json())
+            .then(data => {
+                for (var d of data) {
+                    logSensor(d)
+                    break
+                }
+            })
+        console.log('')
+
+        // 5 min endpoint.
+        var url = 'http://api.luftdaten.info/static/v2/data.json '
+        fetch(url)
+            .then(resp => resp.json())
+            .then(data => {
+                for (var d of data) {
+                    if (d.location.country == 'ZA') {
+                        logSensor(d)
+                    }
+                }
+            })
+
+    </script>
+</body>
+
+</html>
