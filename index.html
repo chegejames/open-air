@@ -15,20 +15,31 @@
 
     <script>
         var countryCode = 'ZA';
+
     </script>
 </head>
 
 <body onload="render(countryCode)">
-    <h1>Sensors</h1>
-    <h2 id="location"></h2>
+    <h1>Open Air</h1>
+    <h2>Sensor data </h2>
+
+    <ul>
+        <li>Location filter: <span id="location"></span></li>
+        <li>Date range: last 5 minutes</li>
+    </ul>
 
     <div id="target-output">Error fetching or processing data</div>
     <script id="sensors-table" type="text/template">
-        {{#sensors}}
-            <ul>
-                <li><strong>ID:</strong> {{ id }}</li>
-            </ul>
-        {{/sensors}}
+        <table>
+            <tr>
+                <th>Sensor ID</th>
+            </tr>
+            {{#sensors}}
+                <tr>
+                    <td>{{ id }}</td>
+                </tr>
+            {{/sensors}}
+        </table>
     </script>
 </body>
 
