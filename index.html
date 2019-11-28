@@ -37,7 +37,7 @@
 
             console.log('')
         }
-        var url = 'http://data.sensor.community/airrohr/v1/filter/country=ZA';
+        var url = '//data.sensor.community/airrohr/v1/filter/country=ZA';
         fetch(url)
             .then(resp => resp.json())
             .then(data => {
@@ -49,7 +49,7 @@
         console.log('')
 
         // 5 min endpoint.
-        var url = 'http://api.luftdaten.info/static/v2/data.json '
+        var url = '//api.luftdaten.info/static/v2/data.json '
         fetch(url)
             .then(resp => resp.json())
             .then(data => {
