@@ -16,11 +16,10 @@
 
 ### API tests
 
-
-### V1
+#### V1
 
 - https://data.sensor.community/airrohr/v1/filter/country=ZA - measurements for last 5 minutes, filtered to South Africa only.
 
-### V2
+#### V2
 
 - http://api.luftdaten.info/static/v2/data.json - average of all measurements per sensor of the last 5 minutes for all sensors.
