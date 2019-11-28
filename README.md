@@ -1,6 +1,11 @@
 # Open Air
 > Report on South African air quality data pulled from the [luftdaten.info](https://luftdaten.info) project's APIs.
 
+## Libraries
+
+- Bootstrap - To style the table (using [classes](https://getbootstrap.com/docs/4.3/content/tables/)) and give the overall page a style.
+- JQuery - To handle remote JSON data.
+- Mustache JS - To create a table using template and data.
 
 ## Links
 
@@ -23,3 +28,30 @@
 #### V2
 
 - http://api.luftdaten.info/static/v2/data.json - average of all measurements per sensor of the last 5 minutes for all sensors.
+
+## Github Pages
+
+1. Use this repo or a fork on Github Pages.
+1. Go to Settings.
+1. Go to Github Pages section.
+1. Enable website using `master` branch. The page will reload.
+1. Navigate to the section again and find the URL.
+
+## Local development
+
+### Setup
+
+Clone the project from the original or a fork.
+
+Install [Jekyll](https://jekyllrb.com/) globally.
+
+### Run
+
+```bash
+$ cd <PATH_TO_REPO>
+$ jekyll serve
+```
+
+Open this URL in the browser.
+
+- http://127.0.0.1:4000
