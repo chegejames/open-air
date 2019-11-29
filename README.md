@@ -13,15 +13,10 @@ This project could be expanded to allow a user choice of country using a droplis
 
 ## Links
 
-### Projects
-
 - [opendata-stuttgart/meta](https://github.com/opendata-stuttgart/meta) repo.
 - [API documentation](https://github.com/opendata-stuttgart/meta/wiki/EN-APIs) on the meta repo's Wiki. In particular, the V2 endpoint of measurements in the last 5 minutes is used for this project.
 - [luftdaten.info](https://luftdaten.info) homepage. They have a link there to their map tool.
-
-### Maps
-
-- [Map tool](https://deutschland.maps.luftdaten.info/#12/-33.9412/18.4803), with the view centered on Cape Town, South Africa.
+- [Map tool](https://deutschland.maps.luftdaten.info/#12/-33.9412/18.4803) with the view centered on Cape Town, South Africa.
 
 
 ## Local development
