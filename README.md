@@ -14,9 +14,9 @@ This project could be expanded to allow a user choice of country using a droplis
 ## Links
 
 - [opendata-stuttgart/meta](https://github.com/opendata-stuttgart/meta) repo.
-- [API documentation](https://github.com/opendata-stuttgart/meta/wiki/EN-APIs) on the meta repo's Wiki. In particular, the V2 endpoint of measurements in the last 5 minutes is used for this project.
-- [luftdaten.info](https://luftdaten.info) homepage. They have a link there to their map tool.
-- [Map tool](https://deutschland.maps.luftdaten.info/#12/-33.9412/18.4803) with the view centered on Cape Town, South Africa.
+    * [API documentation](https://github.com/opendata-stuttgart/meta/wiki/EN-APIs) on the Wiki.
+    * [api.luftdaten.info/static/v2/data.json](https://api.luftdaten.info/static/v2/data.json) - V2 API endpoint for measurements in the last 5 minutes, used for this project.
+- [luftdaten.info](https://luftdaten.info) homepage. There is a link there to their map tool. Use this [link](https://deutschland.maps.luftdaten.info/#12/-33.9412/18.4803) to jump to the map with the view centered on Cape Town, South Africa.
 
 
 ## Local development
@@ -31,7 +31,7 @@ This project could be expanded to allow a user choice of country using a droplis
 ### Setup
 
 1. Clone the project from the original or a fork.
-1. Install [Jekyll](https://jekyllrb.com/) globally.
+2. Install [Jekyll](https://jekyllrb.com/) globally.
 
 ### Run
 
