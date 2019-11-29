@@ -1,6 +1,7 @@
 "use strict";
 
-const API_URL_5_MIN = '//api.luftdaten.info/static/v2/data.json';
+const API_URL_5_MIN = 'http://api.sensors.africa/static/v2/data.json';
+
 
 function parseSensorData(value) {
     var output = {
